@@ -1,0 +1,44 @@
+<%- include('../partials/admin-header') %>
+
+<!-- ========== Section Begins ========== -->
+
+<section class="sec container mb-5">
+
+
+  <% students.forEach(function (student) { %>
+
+  <div class="card d-block mt-5 mb-3">
+    <br>
+    <% if(student.profilephoto!==""){ %>
+      <img class="card-img-top d-block m-auto" style="border-radius: 50%; height: 15rem; width: 15rem;" src="studentdp/<%=student.profilephoto%>" alt="Error">
+    <% }else{ %>
+        <a href="#"><img class="card-img-top d-block m-auto" style="border-radius: 50%; height: 15rem; width: 15rem;" src="logo.png"
+          alt="User-Profile">
+        </a>
+    <% } %>
+    <div class="card-body">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><strong>Username: </strong><%= student.username %></li>
+        <li class="list-group-item"><strong>Email: </strong><%= student.email %></li>
+        <li class="list-group-item"><strong>Mobile no.: </strong><%= student.mobile %></li>
+        <li class="list-group-item"><strong>Study Material: </strong>
+          <div>
+            <li><a href="https://drive.google.com/file/d/1GeNstlv91JDTs78ZtxxeUct81Jto5Dew/view?usp=sharing" target="_blank">CCC Notes part 1...</a></li>
+            <li><a href="https://drive.google.com/file/d/1PEACb8HG0Zov77zyG6W6fiMhO6kcJ39r/view?usp=sharing"  target="_blank">CCC Notes part 2...</a></li>        
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <% }) %>
+
+</section>
+
+</div>
+
+<a href="#" class="to-top">
+  <i class="fa fa-chevron-up"></i>
+</a>
+
+<%- include('../partials/footer') %>
